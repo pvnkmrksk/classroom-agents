@@ -1,56 +1,99 @@
-# Classroom collective behaviour
+# You are the flock
 
-Fifteen people, one shared field. Each student is a fox. They only see whoever the experiment allows, and the pattern you measure afterwards is the collective behaviour.
+Each of you is one animal in a shared field. You see only the neighbours the experiment allows. The pattern is measured afterwards.
 
-This repository is the lecture tool: entrainment, a handoff from bots to students, bifurcation, an informed minority, echo chambers with a bridge, topological versus metric neighbours, a looming threat, social versus solitary search for an invisible patch, stop-and-go, and collision damage. The live class is a Node server. This README and the [browser page](https://pvnkmrksk.github.io/classroom-agents/) play saved class runs. GitHub Pages cannot host the multiplayer server. The page autoplays the videos; GitHub’s README shows a still that links to the same file.
+Fifteen students share that field. On screen, the animal is a fox. Two comparisons follow: a search for a patch nobody was shown, and two chambers linked by one bridge. On the [live page](https://pvnkmrksk.github.io/classroom-agents/) you scroll through the paths. The stills are here.
+
+## In the herd
 
 [![First person, walking with the herd](examples/posters/fpv-herd.jpg)](examples/videos/fpv-herd.mp4)
 
-<video src="examples/videos/fpv-herd.mp4" poster="examples/posters/fpv-herd.jpg" muted loop playsinline controls width="100%"></video>
+First person, sixteen seconds. The foxes face the way they are travelling. Scarves are off in this clip. [Open the video](examples/videos/fpv-herd.mp4).
 
-First person in the marching herd, 16 seconds, 30 frames per second, 1600×900. The foxes face the way they are travelling. Neckerchiefs are off in this clip. [Open the video](examples/videos/fpv-herd.mp4). On the [browser page](https://pvnkmrksk.github.io/classroom-agents/) it autoplays, muted, and looped.
-
-## Echo chambers
-
-[![Echo chambers. With a bridge the headings meet. Without one they stay apart.](examples/posters/echo-side-by-side.png)](examples/videos/echo-side-by-side.mp4)
-
-<video src="examples/videos/echo-side-by-side.mp4" poster="examples/posters/echo-side-by-side.png" muted loop playsinline controls width="100%"></video>
-
-Blue sees only blue, red only red. The bridge clip is the later take in the class log (`echo chambers 2`), started when the chambers switch on, with the two colours already on different headings. Order Φ climbs from about 0.3 to 1. The no-bridge take is started at its own switch-on, and Φ stays near 0.2. [Video](examples/videos/echo-side-by-side.mp4).
-
-![Order over time. With a bridge it rises to 1. Without a bridge it stays low.](examples/plots/echo-order.png)
-
-## Finding a patch
+## A patch nobody was shown
 
 [![Social foxes gather in the patch. Solitary foxes stay spread.](examples/posters/taxis-side-by-side.png)](examples/videos/taxis-side-by-side.mp4)
 
-<video src="examples/videos/taxis-side-by-side.mp4" poster="examples/posters/taxis-side-by-side.png" muted loop playsinline controls width="100%"></video>
+When the animals can see each other, the search finishes. When each animal sees no one, it is still unfinished. [Open the video](examples/videos/taxis-side-by-side.mp4). Scrolling the [live page](https://pvnkmrksk.github.io/classroom-agents/#patch) moves through these paths.
 
-The last two patch takes. Recording had started while many animals were still inside the previous patch, so both clips begin after the reset, when the new 4&nbsp;m patch is empty. The curve is how many have reached it, so it rises. Social and solitary share the axes. Social: half the group by 34 seconds, all 13 inside by 44 seconds. Solitary: half the group by 47 seconds, and at 122 seconds 10 of 13 have arrived. [Video](examples/videos/taxis-side-by-side.mp4).
+![How many foxes have reached the patch. Together the count reaches 13. Alone it reaches 10.](examples/plots/patch-arrivals.png)
 
-![How many foxes have reached the patch. Social rises to 13. Solitary rises more slowly, to 10.](examples/plots/patch-arrivals.png)
+The curve counts how many have reached the patch. Together, half the group is in by 34 seconds and all 13 are inside by 44. Alone, half have arrived by 47 seconds, and at 122 seconds the count is 10 of 13.
+
+![Together the group sits inside the patch. Alone, most animals stay outside it.](examples/figures/patch-schematic.png)
+
+The picture the model leads you to expect. Together, the group gathers in the patch. Alone, most of them stay outside it. After [Berdahl et al., 2013](https://doi.org/10.1126/science.1225883).
+
+## Who could see whom
+
+![A network of blue nodes and red nodes, joined only through one gold bridge. Grey lines are who could see whom.](examples/figures/echo-chambers.png)
+
+Blue sees only blue. Red sees only red. Gold is the one bridge that sees both.
+
+## Echo chambers
+
+[![With a bridge the headings meet. Without one they stay apart.](examples/posters/echo-side-by-side.png)](examples/videos/echo-side-by-side.mp4)
+
+With a bridge, the chambers settle on one heading and order rises from about 0.3 to 1. Without a bridge, order stays low, near 0.2. [Open the video](examples/videos/echo-side-by-side.mp4). Scrolling the [live page](https://pvnkmrksk.github.io/classroom-agents/#echo) moves through these paths.
+
+![Order over time. With a bridge it rises to 1. Without a bridge it stays low.](examples/plots/echo-order.png)
+
+Φ is the order: 0 when headings are random, 1 when everyone moves the same way.
 
 ## The room
 
-![Teacher dashboard during entrainment. Fourteen bots march across the god view.](examples/figures/god-view.jpg)
+![The lecturer’s screen during the march. Fourteen bots cross one cell, with trails behind them.](examples/figures/god-view.jpg)
 
-The lecturer’s god view during entrainment. One cell is drawn here. On a student’s screen the same foxes are also mirrored into the fog, so the march has no edge.
+The lecturer’s view of the march. One cell is drawn here. On a student’s screen the same foxes continue into the fog, so the field has no edge.
 
-![God view of the calm patch, with one student outside it.](examples/figures/oasis-god.jpg)
+![The hidden patch on the lecturer’s map, with one student still outside it.](examples/figures/oasis-god.jpg)
 
-The calm patch, as the teacher sees it during the social taxis preset. Students are not told where it is.
+![First person on the grass, with the blue rim of the hidden patch in frame.](examples/figures/oasis-field.jpg)
 
-![First person on the grass, with the edge of the calm patch in frame.](examples/figures/oasis-field.jpg)
+The hidden patch, from the lecturer’s screen and from a student’s. Students are not told where it is. The blue rim is a hint the lecturer can turn off.
 
-The same kind of field from a student’s eyes. The blue rim is an optional hint the dashboard can hide.
+## The other patterns
 
-![Schematic expected results: order, a split, an informed minority, echo chambers, topological neighbours, and social patch finding.](examples/figures/expected-models.png)
+![Two heading histograms. Locked bots make one peak. Meandering bots are flat.](examples/figures/order-histograms.png)
 
-Shapes the dashboard sketches for the lecture. These are redrawn schematics, not copies of the paper figures.
+A locked march has one peak, on the swarm’s heading. A meandering swarm is flat. R is the bots’ own order: near 1 they hold a heading, at 0 they wander. After [Vicsek et al., 1995](https://doi.org/10.1103/PhysRevLett.75.1226) and [Buhl et al., 2006](https://doi.org/10.1126/science.1125142).
 
-## Run the live class
+![Three curves after a dashed line: order holds, order falls, or order dips and returns.](examples/figures/handoff-curves.png)
 
-Needs Node 20 or newer. One computer can open the student view and `/admin` together and press the experiment buttons. That is a real single-browser session. A class of laptops needs this server so they share one world. A static GitHub Page cannot do that.
+The dashed line is the moment the bots vanish. Order may hold, fall away, or return on a new heading. After [Buhl et al., 2006](https://doi.org/10.1126/science.1125142).
+
+![A narrow split becomes one central peak. A wide split stays two peaks.](examples/figures/split-histograms.png)
+
+A small angle is averaged into one peak. A large angle stays two. After [Couzin et al., 2005](https://doi.org/10.1038/nature03236).
+
+![A fixed radius leaves neighbours outside the circle. The four nearest stay linked, however far.](examples/figures/neighbours.png)
+
+A fixed radius empties out when the group stretches. The four nearest still hold the group together. After [Ballerini et al., 2008](https://doi.org/10.1073/pnas.0711437105).
+
+![Moving fraction stays low, spikes at a dashed line, then falls back.](examples/figures/looming.png)
+
+The dashed line is the moment one person sees the threat. Movement spikes, then settles.
+
+## What the class runs
+
+Each button on the teacher’s screen starts that experiment.
+
+| | The point | Source |
+|---|---|---|
+| 1A Entrainment | Follow a marching swarm. | [Vicsek et al., 1995](https://doi.org/10.1103/PhysRevLett.75.1226); [Buhl et al., 2006](https://doi.org/10.1126/science.1125142) |
+| 1B Handoff | The swarm vanishes. Does the march hold? | [Buhl et al., 2006](https://doi.org/10.1126/science.1125142) |
+| 2 Bifurcation | Two streams. A small angle is averaged. A large angle stays two headings. | [Couzin et al., 2005](https://doi.org/10.1038/nature03236) |
+| 3 Informed | Three of the fifteen privately see a beacon. The rest are not told the direction. | [Couzin et al., 2005](https://doi.org/10.1038/nature03236) |
+| 4A Echo chambers | Blue sees blue, red sees red. One bridge sees both. | The classroom network |
+| 4B Neighbours | The k nearest, however far, or only those inside a fixed radius. | [Ballerini et al., 2008](https://doi.org/10.1073/pnas.0711437105) |
+| 5 Looming | One student sees the threat. The others see a neighbour bolt. | A looming stimulus, in the locust collision-detector tradition |
+| 6 Patch | A hidden patch slows you down. Together you can see each other. Alone you see no one. | [Berdahl et al., 2013](https://doi.org/10.1126/science.1225883) |
+| 7 Stop and go | An automatic pause just before a bump. | [Ariel et al., 2014](https://doi.org/10.1371/journal.pone.0101636); [Bazazi et al., 2008](https://doi.org/10.1016/j.cub.2008.04.035) |
+| 8 Avoid bumps | Contact costs. Order can come from not hitting each other. | [Bazazi et al., 2008](https://doi.org/10.1016/j.cub.2008.04.035); [Romanczuk et al., 2009](https://doi.org/10.1103/PhysRevLett.102.010602) |
+
+## Run the class
+
+Needs Node.js 20 or newer.
 
 ```bash
 git clone https://github.com/pvnkmrksk/classroom-agents.git
@@ -59,73 +102,11 @@ npm install
 npm start
 ```
 
-- Students: [http://localhost:3000](http://localhost:3000) — name, then join code `matrex`
-- Lecturer: [http://localhost:3000/admin](http://localhost:3000/admin) — key `matrexvr`
+Students open [http://localhost:3000](http://localhost:3000) and join with `matrex`. The teacher opens [http://localhost:3000/admin](http://localhost:3000/admin) with `matrexvr`.
 
-From another network, in a second terminal:
+A live class needs this server on a machine the students can reach. The site only plays the saved examples.
 
-```bash
-npm run public
-```
-
-Leave it open. It prints an `https://….trycloudflare.com` link. That link changes every time you start it. Students use the link plus `matrex`. You use the same link with `/admin` and `matrexvr`.
-
-If port 3000 is already taken:
-
-```bash
-lsof -ti :3000 | xargs kill -9
-pkill -f "cloudflared tunnel --url http://127.0.0.1:3000"
-npm run public
-```
-
-Students: click to lock the mouse, WASD or arrows to move, mouse to look. Hard-refresh (`Cmd+Shift+R`) after you update the server.
-
-The hour-by-hour lecture plan is [`LECTURE.md`](LECTURE.md). Handover notes for changing the software are [`AGENTS.md`](AGENTS.md).
-
-## What to press
-
-The buttons along the top of the dashboard are the canonical models. One click resets that experiment.
-
-| Button | What the class is doing | What you measure | Source |
-|---|---|---|---|
-| 1A Entrainment | Students see only a marching swarm. You set its order R and heading θ | Order Φ and entrainment to θ. High R locks the march; R = 0 is a meandering walk | [Vicsek et al., 1995](https://doi.org/10.1103/PhysRevLett.75.1226); [Buhl et al., 2006](https://doi.org/10.1126/science.1125142) |
-| 1B Handoff | The swarm vanishes. Students see only each other | Does Φ hold, decay, or pick a new heading | [Buhl et al., 2006](https://doi.org/10.1126/science.1125142) |
-| 2 Bifurcation | Two bot streams at ±Δθ/2 | One peak in the heading histogram means they averaged. Two peaks means they split | [Couzin et al., 2005](https://doi.org/10.1038/nature03236) |
-| 3 Informed | Three students privately see a beacon. The rest are not told the direction | Does the hidden minority steer all fifteen | [Couzin et al., 2005](https://doi.org/10.1038/nature03236) |
-| 4A Echo chambers | Blue sees only blue, red sees only red. One bridge can see both | One shared heading, or two headings that never meet | This lecture’s network. The dashboard does not cite a separate paper |
-| 4B Topological | Each student sees their k nearest neighbours, however far | Cohesion when the group is stretched, against a fixed radius | [Ballerini et al., 2008](https://doi.org/10.1073/pnas.0711437105) |
-| 5 Looming | One student sees a dive on a straight line and can step off it | Whether the neighbours bolt without seeing the threat | Looming, DCMD-inspired, as labelled on the dashboard. No further paper is named there |
-| 6A / 6B Patch | A patch slows everyone down. 6A can see each other. 6B can see no one | Who reaches the patch, and when | [Berdahl et al., 2013](https://doi.org/10.1126/science.1225883) |
-| 7 Stop and go | An automatic pause just before a bump | Pause waves through the group | [Ariel et al., 2014](https://doi.org/10.1371/journal.pone.0101636); [Bazazi et al., 2008](https://doi.org/10.1016/j.cub.2008.04.035) |
-| 8 Avoid bumps | Contact costs integrity | Whether alignment appears because crossing hurts | [Bazazi et al., 2008](https://doi.org/10.1016/j.cub.2008.04.035); [Romanczuk et al., 2009](https://doi.org/10.1103/PhysRevLett.102.010602) |
-
-Φ is the Vicsek order parameter: 0 when headings are random, 1 when they agree.
-
-**God view.** Global draws the unwrapped path, so a straight march is a straight line. Periodic cell is the single hex. Scroll zooms, drag pans.
-
-**Trials.** Record, stop, uncheck a bad take, and the mean line is only the ones you kept. A restart does not delete saved trials. It does drop whoever is connected.
-
-## Replay files
-
-The four trajectories are in the repo, so someone else can replay them without the original session log (that log is local and is not published).
-
-| Run | Replay | Video |
-|---|---|---|
-| First person | | [video](examples/videos/fpv-herd.mp4) · [still](examples/posters/fpv-herd.jpg) |
-| Echo chambers, side by side | | [video](examples/videos/echo-side-by-side.mp4) · [order plot](examples/plots/echo-order.png) |
-| Patch finding, side by side | | [video](examples/videos/taxis-side-by-side.mp4) · [arrivals plot](examples/plots/patch-arrivals.png) |
-| Echo chambers, with a bridge | [`examples/replays/echo-with-bridge.json`](examples/replays/echo-with-bridge.json) | trial `echo chambers 2` |
-| Echo chambers, no bridge | [`examples/replays/echo-no-bridge.json`](examples/replays/echo-no-bridge.json) | |
-| Patch finding, social | [`examples/replays/taxis-social.json`](examples/replays/taxis-social.json) | last social take |
-| Patch finding, solitary | [`examples/replays/taxis-solo.json`](examples/replays/taxis-solo.json) | last solitary take |
-
-Source session, for anyone who still has the local log: `logs/session-2026-11-02T12-58-14-928Z.jsonl`. The later files in `logs/` are idle bot sessions, not these takes.
-
-To draw the comparison videos again from `trials/lecture-trials.json` you need `ffmpeg` and `rsvg-convert`:
-
-```bash
-npm run examples
-```
+Click to look around. WASD or the arrow keys move.
 
 ## References
 
